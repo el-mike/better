@@ -13,25 +13,29 @@ import {
 } from '@angular/router';
 
 import {
-  ShellComponent,
-} from './shell/shell.component';
+  TranslateModule,
+} from '@ngx-translate/core';
 
-
-const components = [
-  ShellComponent,
-];
+import { ShellComponent } from './shell/shell.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switcher.component';
+import { LanguagePickerComponent } from './components/language-picker/language-picker.component';
 
 @NgModule({
   declarations: [
-    ...components,
+    ShellComponent,
+    HeaderComponent,
+    FooterComponent,
+    ThemeSwitcherComponent,
+    LanguagePickerComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
+    TranslateModule,
   ],
-  exports: [
-    ...components,
-  ]
+  exports: []
 })
 export class CoreModule {
   constructor(

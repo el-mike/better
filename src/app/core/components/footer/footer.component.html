@@ -1,0 +1,7 @@
+<footer class="footer">
+  <app-language-picker
+    [selectedLanguage]="language$ | async"
+    [languages]="languages"
+    (selectLanguage)="selectLanguage($event)">
+  </app-language-picker>
+</footer>

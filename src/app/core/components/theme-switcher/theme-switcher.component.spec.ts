@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShellComponent } from './shell.component';
+import { ThemeSwitcherComponent } from './theme-switcher.component';
 
-describe('ShellComponent', () => {
-  let component: ShellComponent;
-  let fixture: ComponentFixture<ShellComponent>;
+describe('ThemeSwitcherComponent', () => {
+  let component: ThemeSwitcherComponent;
+  let fixture: ComponentFixture<ThemeSwitcherComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShellComponent ]
+      declarations: [ ThemeSwitcherComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShellComponent);
+    fixture = TestBed.createComponent(ThemeSwitcherComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

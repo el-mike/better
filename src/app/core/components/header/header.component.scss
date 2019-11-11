@@ -1,0 +1,52 @@
+@import "src/styles/theming";
+@import "src/styles/mixins";
+
+:host {
+  display: block;
+}
+
+.header {
+  @include flexify(flex-start);
+
+  height: 100%;
+  padding: 0.8rem 1.6rem;
+  box-shadow: 
+    0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+
+  @include themify($themes) {
+    background-color: themed('color-primary');
+    color: themed('color-on-primary');
+  }
+
+  &__logo {
+    width: 33.33%;
+    font-size: 3rem;
+  }
+
+  &__nav {
+    @include flexify();
+
+    width: 33.33%;
+    margin: 0 1.6rem;
+  }
+
+  &__nav-item {
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    transition: ease-in-out color .15s;
+
+    &:hover {
+      @include themify($themes) {
+        color: themed('color-on-primary-active');
+      }
+    }
+  }
+
+  &__actions {
+    @include flexify(flex-end, center);
+
+    width: 33.33%;
+  }
+}

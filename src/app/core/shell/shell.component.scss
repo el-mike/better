@@ -1,0 +1,40 @@
+@import "src/styles/variables";
+@import "src/styles/theming";
+
+:host {
+  display: block;
+  height: 100vh;
+  width: 100%;
+}
+
+.theme {
+  height: 100%;
+}
+
+.shell {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  /**
+   * This class must be themified using themify-global,
+   * because theme class is put inside the same component, therefore
+   * :host-context wouldn't work in this case.
+   */
+  @include themify-global($themes) {
+    background-color: themed('color-background');
+    color: themed('color-on-background');
+  }
+
+  &__content-container {
+    width: 100%;
+    max-width: 1200px;
+    justify-self: center;
+  }
+
+  &__content {
+    padding: 0.8rem 1.6rem;
+  }
+}

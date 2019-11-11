@@ -1,0 +1,15 @@
+<header class="header">
+  <a class="header__logo">Better</a>
+  <nav class="header__nav">
+    <a class="header__nav-item">
+      Bets
+    </a>
+  </nav>
+  <div class="header__actions">
+    <app-theme-switcher
+      [selectedTheme]="theme$ | async"
+      [themes]="themes"
+      (selectTheme)="selectTheme($event)">
+    </app-theme-switcher>
+  </div>
+</header>

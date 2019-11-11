@@ -1,0 +1,18 @@
+@import "src/styles/theming";
+@import "src/styles/mixins";
+
+:host {
+  display: block;
+}
+
+.footer {
+  height: 100%;
+  padding: 0.8rem 1.6rem;
+
+  @include flexify(flex-end);
+
+  @include themify($themes) {
+    background-color: themed('color-primary');
+    color: themed('color-on-primary');
+  }
+}
