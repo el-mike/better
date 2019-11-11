@@ -1,12 +1,29 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  NgModule,
+} from '@angular/core';
+
+import {
+  CommonModule,
+} from '@angular/common';
+
+import {
+  TranslateModule,
+} from '@ngx-translate/core';
+
+import { FlatPickerComponent } from './components/flat-picker/flat-picker.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FlatPickerComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    TranslateModule,
+  ],
+  exports: [
+    FlatPickerComponent,
   ]
 })
 export class SharedModule { }
