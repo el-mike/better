@@ -1,8 +1,0 @@
-<div class="theme-switcher btn-group">
-  <button *ngFor="let theme of themes"
-          [ngClass]="{ 'active': theme.name === selectedTheme }"
-          (click)="onSelectTheme(theme)"
-          class="btn btn--secondary-outline btn--small">
-    {{ theme.label | translate }}
-  </button>
-</div>

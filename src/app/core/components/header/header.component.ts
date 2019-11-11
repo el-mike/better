@@ -21,6 +21,10 @@ import {
   THEMES_CONFIG,
 } from '@app/common';
 
+import {
+  FlatPickerItem,
+} from '@app/shared';
+
 import * as fromState from '@app/+state';
 
 @Component({
@@ -31,8 +35,8 @@ import * as fromState from '@app/+state';
 })
 export class HeaderComponent implements OnInit {
   public theme$: Observable<Theme>;
-  
-  public themes: ThemeConfig[] = [];
+
+  public themeItems: FlatPickerItem<Theme>[] = [];
 
   constructor(
     private readonly store: Store<fromState.AppState>,
@@ -40,8 +44,12 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.themes = Object.keys(this.themesConfig)
-      .map(key => this.themesConfig[key]);
+    this.themeItems = Object.keys(this.themesConfig)
+      .map(key => this.themesConfig[key] as ThemeConfig)
+      .map(themeConfig => ({
+        value: themeConfig.name,
+        label: themeConfig.label,
+      } as FlatPickerItem<Theme>));
 
     this.theme$ = this.store.pipe(
       select(fromState.getTheme),

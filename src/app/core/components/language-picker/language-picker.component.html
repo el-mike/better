@@ -1,9 +1,0 @@
-<div class="language-switcher btn-group">
-    <button *ngFor="let language of languages"
-            [ngClass]="{ 'active': language.name === selectedLanguage }"
-            (click)="onSelectLanguage(language)"
-            class="btn btn--secondary-outline btn--small">
-      {{ language.label | translate }}
-    </button>
-  </div>
-  

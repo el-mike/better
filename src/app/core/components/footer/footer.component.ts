@@ -21,6 +21,10 @@ import {
   LANGUAGES_CONFIG,
 } from '@app/common';
 
+import {
+  FlatPickerItem,
+} from '@app/shared';
+
 import * as fromState from '@app/+state';
 
 @Component({
@@ -31,7 +35,7 @@ import * as fromState from '@app/+state';
 })
 export class FooterComponent implements OnInit {
   public language$: Observable<Language>;
-  public languages: LanguageConfig[] = [];
+  public languageItems: FlatPickerItem<Language>[] = [];
 
   constructor(
     private readonly store: Store<fromState.AppState>,
@@ -39,8 +43,12 @@ export class FooterComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.languages = Object.keys(this.languagesConfig)
-      .map(key => this.languagesConfig[key]);
+    this.languageItems = Object.keys(this.languagesConfig)
+      .map(key => this.languagesConfig[key] as LanguageConfig)
+      .map(languageConfig => ({
+        value: languageConfig.name,
+        label: languageConfig.label,
+      } as FlatPickerItem<Language>));
 
     this.language$ = this.store.pipe(
       select(fromState.getLanguage)

@@ -16,11 +16,13 @@ import {
   TranslateModule,
 } from '@ngx-translate/core';
 
+import {
+  SharedModule,
+} from '@app/shared';
+
 import { ShellComponent } from './shell/shell.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switcher.component';
-import { LanguagePickerComponent } from './components/language-picker/language-picker.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { LanguagePickerComponent } from './components/language-picker/language-p
     CommonModule,
     RouterModule,
     TranslateModule,
+    SharedModule,
   ],
   exports: []
 })
