@@ -29,8 +29,6 @@ import { FooterComponent } from './components/footer/footer.component';
     ShellComponent,
     HeaderComponent,
     FooterComponent,
-    ThemeSwitcherComponent,
-    LanguagePickerComponent,
   ],
   imports: [
     CommonModule,
