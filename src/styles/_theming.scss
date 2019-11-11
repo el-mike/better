@@ -1,0 +1,66 @@
+$themes: (
+  light: (
+    color-primary: #408bbd,
+    color-primary-active: lighten(#408bbd, 5%),
+    color-secondary: #fff,
+    color-secondary-active: darken(#fff, 5%),
+    color-background: #fff,
+    color-surface: #ddd,
+    color-on-primary: #fff,
+    color-on-primary-active: darken(#fff, 10%),
+    color-on-secondary: #222,
+    color-on-secondary-active: lighten(#222, 10%),
+    color-on-background: #222,
+    color-on-surface: #222,
+  ),
+  dark: (
+    color-primary: #222,
+    color-primary-active: lighten(#222, 5%),
+    color-secondary: #777,
+    color-secondary-active: lighten(#777, 5%),
+    color-background: #444,
+    color-surface: #555,
+    color-on-primary: #fff,
+    color-on-primary-active: darken(#fff, 10%),
+    color-on-secondary: #ddd,
+    color-on-secondary-active: lighten(#ddd, 10%),
+    color-on-background: #ddd,
+    color-on-surface: #ddd,
+  )
+);
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    :host-context(.theme-#{$theme}) & {
+      $theme-map: () !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@mixin themify-global($themes: $themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

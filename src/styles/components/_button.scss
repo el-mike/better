@@ -1,0 +1,111 @@
+@import "../theming";
+
+.btn {
+  max-width: 20rem;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 1rem 2.4rem;
+  display: inline-block;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+  border: none;
+
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn--primary {
+  @include themify-global($themes) {
+    background-color: themed('color-primary');
+    border: 2px solid themed('color-primary');
+    color: themed('color-on-primary');
+  }
+
+  &:hover {
+    @include themify-global($themes) {
+      background-color: themed('color-primary-active');
+      border: 2px solid themed('color-primary-active');
+    }
+  }
+}
+
+.btn--primary-outline {
+  background-color: transparent;
+
+  @include themify-global($themes) {
+    color: themed('color-primary');
+    border: 2px solid themed('color-primary');
+  }
+
+  &:hover,
+  &:active,
+  &.active {
+    @include themify-global($themes) {
+      background-color: themed('color-primary');
+      color: themed('color-on-primary');
+    }
+  }
+}
+
+.btn--secondary {
+  @include themify-global($themes) {
+    background-color: themed('color-secondary');
+    border: 2px solid themed('color-secondary');
+    color: themed('color-on-secondary');
+  }
+
+  &:hover {
+    @include themify-global($themes) {
+      background-color: themed('color-secondary-active');
+      border: 2px solid themed('color-secondary-active');
+    }
+  }
+}
+
+.btn--secondary-outline {
+  background-color: transparent;
+  @include themify-global($themes) {
+    color: themed('color-secondary');
+    border: 2px solid themed('color-secondary');
+  }
+
+  &:hover,
+  &:active,
+  &.active {
+    @include themify-global($themes) {
+      background-color: themed('color-secondary');
+      color: themed('color-on-secondary');
+    }
+  }
+}
+
+.btn--small {
+  padding: 0.2rem 0.8rem;
+}
+
+.btn-group {
+  white-space: nowrap;
+
+  .btn {
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  .btn--secondary-outline {
+    border-right: none;
+
+    &:last-child {
+      @include themify-global($themes) {
+        border: 2px solid themed('color-secondary');
+      }
+    }
+  }
+}
