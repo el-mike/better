@@ -1,6 +1,13 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import {
+  Action,
+  createReducer,
+  on,
+} from '@ngrx/store';
 
-import { Theme, Language } from '@app/common';
+import {
+  Theme,
+  Language,
+} from '@app/common';
 
 import * as AppActions from './base.actions';
 
@@ -10,7 +17,7 @@ export interface BaseState {
 }
 
 export const initialState: BaseState = {
-  theme: Theme.LIGHT,
+  theme: Theme.DARK,
   language: Language.EN,
 };
 

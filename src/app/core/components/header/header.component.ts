@@ -16,7 +16,6 @@ import {
 
 import {
   Theme,
-  ThemeConfig,
   ThemesConfig,
   THEMES_CONFIG,
 } from '@app/common';
@@ -44,8 +43,7 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.themeItems = Object.keys(this.themesConfig)
-      .map(key => this.themesConfig[key] as ThemeConfig)
+    this.themeItems = Object.values(this.themesConfig)
       .map(themeConfig => ({
         value: themeConfig.name,
         label: themeConfig.label,

@@ -1,0 +1,26 @@
+@import "src/styles/mixins";
+
+.bets {
+
+  &__header {
+    padding: 0 1.6rem;
+    @include flexify(space-between);
+
+    @include for-size(phone-only) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  
+  &__header-actions {
+    @include flexify();
+
+    button {
+      margin: .8rem .2rem;
+    }
+  }
+
+  &__list {
+    padding: 0 1.6rem;
+  }
+}

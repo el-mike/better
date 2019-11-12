@@ -2,5 +2,10 @@
   "general.theme_light_l": "Light",
   "general.theme_dark_l": "Dark",
   "general.en_l": "en",
-  "general.pl_l": "pl"
+  "general.pl_l": "pl",
+  "bets.bets_title": "Bets",
+  "bets.generate_bets_a": "Generate",
+  "bets.draw": "Draw",
+  "bets.start_pulling_a": "Start Pulling",
+  "bets.stop_pulling_a": "Stop Pulling"
 }

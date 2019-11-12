@@ -16,7 +16,6 @@ import {
 
 import {
   Language,
-  LanguageConfig,
   LanguagesConfig,
   LANGUAGES_CONFIG,
 } from '@app/common';
@@ -43,8 +42,7 @@ export class FooterComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.languageItems = Object.keys(this.languagesConfig)
-      .map(key => this.languagesConfig[key] as LanguageConfig)
+    this.languageItems = Object.values(this.languagesConfig)
       .map(languageConfig => ({
         value: languageConfig.name,
         label: languageConfig.label,

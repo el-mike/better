@@ -1,5 +1,28 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  NgModule,
+} from '@angular/core';
+
+import {
+  CommonModule,
+} from '@angular/common';
+
+import {
+  StoreModule,
+} from '@ngrx/store';
+
+import {
+  EffectsModule,
+} from '@ngrx/effects';
+
+import {
+  TranslateModule,
+} from '@ngx-translate/core';
+
+import {
+  betsReducers,
+  effects,
+  betsFeatureStateKey,
+} from './+state';
 
 import {
   BetsRoutingModule,
@@ -8,6 +31,7 @@ import {
 import {
   BetsComponent,
 } from './containers/bets/bets.component';
+import { BetComponent } from './components/bet/bet.component';
 
 const components = [
   BetsComponent,
@@ -16,10 +40,14 @@ const components = [
 @NgModule({
   declarations: [
     ...components,
+    BetComponent,
   ],
   imports: [
     CommonModule,
-    BetsRoutingModule
+    TranslateModule,
+    StoreModule.forFeature(betsFeatureStateKey, betsReducers),
+    EffectsModule.forFeature(effects),
+    BetsRoutingModule,
   ]
 })
 export class BetsModule { }

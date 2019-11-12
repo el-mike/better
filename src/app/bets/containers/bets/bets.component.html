@@ -1,1 +1,26 @@
-<p>bets works!</p>
+<div class="bets">
+  <div class="bets__header">
+    <h2 class="bets__header-title">
+      {{ 'bets.bets_title' | translate }}
+    </h2>
+    <div class="bets__header-actions">
+      <button class="btn btn--primary bets__generate-bets-btn" (click)="generateBets()">
+        {{ 'bets.generate_bets_a' | translate }}
+      </button>
+      <button class="btn btn--primary bets__start-pulling-btn" (click)="startPulling()">
+        {{ 'bets.start_pulling_a' | translate }}
+      </button>
+      <button class="btn btn--primary bets__stop-pulling-btn" (click)="stopPulling()">
+        {{ 'bets.stop_pulling_a' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <div class="bets__list">
+    <app-bet *ngFor="let bet of bets$ | async; trackBy: trackByFn"
+             [bet]="bet">
+    </app-bet>
+  </div>
+</div>

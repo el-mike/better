@@ -12,6 +12,8 @@ $themes: (
     color-on-secondary-active: lighten(#222, 10%),
     color-on-background: #222,
     color-on-surface: #222,
+    color-danger: #dc3545,
+    color-success: #28a745,
   ),
   dark: (
     color-primary: #222,
@@ -26,6 +28,8 @@ $themes: (
     color-on-secondary-active: lighten(#ddd, 10%),
     color-on-background: #ddd,
     color-on-surface: #ddd,
+    color-danger: #dc3545,
+    color-success: #28a745,
   )
 );
 

@@ -1,5 +1,5 @@
-@import "src/styles/variables";
 @import "src/styles/theming";
+@import "src/styles/mixins";
 
 :host {
   display: block;
@@ -8,7 +8,7 @@
 }
 
 .theme {
-  height: 100%;
+  height: 100vh;
 }
 
 .shell {
@@ -30,11 +30,14 @@
 
   &__content-container {
     width: 100%;
-    max-width: 1200px;
     justify-self: center;
+    padding: 2.4rem 0;
+    overflow: auto;
   }
 
   &__content {
-    padding: 0.8rem 1.6rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }

@@ -1,0 +1,16 @@
+<div class="bet">
+  <div class="bet__outcome-container">
+    <span class="bet__team-name">{{ homeTeam.name }}</span>
+    <span class="bet__outcome">{{ homeTeam.win | number: '1.1-2' }}</span>
+  </div>
+
+  <div class="bet__outcome-container">
+    <span class="bet__team-name">{{ 'bets.draw' | translate }}</span>
+    <span class="bet__outcome">{{ bet.draw | number: '1.1-2' }}</span>
+  </div>
+
+  <div class="bet__outcome-container">
+    <span class="bet__team-name">{{ awayTeam.name }}</span>
+    <span class="bet__outcome">{{ awayTeam.win | number: '1.1-2' }}</span>
+  </div>
+</div>

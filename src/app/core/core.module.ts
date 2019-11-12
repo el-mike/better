@@ -13,8 +13,16 @@ import {
 } from '@angular/router';
 
 import {
+  HttpClientModule,
+} from '@angular/common/http';
+
+import {
   TranslateModule,
 } from '@ngx-translate/core';
+
+import {
+  SocketIoModule,
+} from 'ngx-socket-io';
 
 import {
   SharedModule,
@@ -35,6 +43,7 @@ import { FooterComponent } from './components/footer/footer.component';
     RouterModule,
     TranslateModule,
     SharedModule,
+    SocketIoModule,
   ],
   exports: []
 })

@@ -26,5 +26,3 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('better');
   }));
 });
-
-//"@types/jasmine": "~3.3.8",

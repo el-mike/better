@@ -1,0 +1,36 @@
+@import "../theming";
+
+.divider {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  
+  @include themify-global($themes) {
+    border: 1px solid themed('color-primary');
+  }
+}
+
+.divider--on-primary {
+  @include themify-global($themes) {
+    border: 1px solid themed('color-on-primary');
+  }
+}
+
+.divider--on-secondary {
+  @include themify-global($themes) {
+    border: 1px solid themed('color-on-secondary');
+  }
+}
+
+.divider--on-background {
+  @include themify-global($themes) {
+    border: 1px solid themed('color-on-background');
+  }
+}
+
+.divider--on-surface {
+  @include themify-global($themes) {
+    border: 1px solid themed('color-on-surface');
+  }
+}

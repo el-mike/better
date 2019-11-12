@@ -20,6 +20,10 @@ import {
 } from '@ngrx/store';
 
 import {
+  EffectsModule,
+} from '@ngrx/effects';
+
+import {
   StoreDevtoolsModule,
 } from '@ngrx/store-devtools';
 
@@ -39,11 +43,14 @@ import {
 import {
   THEMES_CONFIG,
   LANGUAGES_CONFIG,
+  ENVIRONMENT,
+  BETS_CONFIG,
 } from './common';
 
 import {
   themesConfig,
   languagesConfig,
+  betsConfig,
 } from './configs';
 
 import { appReducers } from './+state';
@@ -68,6 +75,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
@@ -84,6 +92,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     { provide: THEMES_CONFIG, useValue: themesConfig || [] },
     { provide: LANGUAGES_CONFIG, useValue: languagesConfig || [] },
+    { provide: ENVIRONMENT, useValue: environment },
+    { provide: BETS_CONFIG, useValue: betsConfig },
   ],
   bootstrap: [AppComponent]
 })

@@ -19,7 +19,7 @@ import {
 export class FlatPickerComponent {
   /**
    * As there is no way to communicate a type wanted by parent,
-   * select needs to be typed as any.
+   * "selected" property needs to be typed as any.
    */
   @Input() public selected: any;
   @Input() public items: FlatPickerItem[] = [];

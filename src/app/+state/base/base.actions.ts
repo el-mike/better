@@ -1,6 +1,12 @@
-import { createAction, props } from '@ngrx/store';
+import {
+  createAction,
+  props,
+} from '@ngrx/store';
 
-import { Theme, Language } from '@app/common';
+import {
+  Theme,
+  Language,
+} from '@app/common';
 
 export const selectTheme = createAction(
   '[Base] Select Theme',

@@ -1,0 +1,59 @@
+@import "src/styles/mixins";
+@import "src/styles/theming";
+
+.bet {
+  @include flexify();
+
+  @include for-size(phone-only) {
+    flex-direction: column;
+    padding: .8rem 0;
+    
+    @include themify($themes) {
+      border-bottom: 1px solid themed('color-on-background'); 
+    }
+  }
+
+  &__outcome-container {
+    @include flexify(space-between);
+
+    margin: .8rem 1.2rem;
+    padding: .8rem;
+    border-radius: 5px;
+    font-size: 1.4rem;
+
+    @include themify($themes) {
+      background-color: themed('color-primary');
+      color: themed('color-on-primary');
+    }
+
+    &:hover {
+      @include themify($themes) {
+        background-color: themed('color-primary-active');
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+      width: 40%;
+    }
+
+    &:nth-child(2) {
+      width: 20%;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      width: 40%;
+    }
+
+    @include for-size(phone-only) {
+      margin: .4rem 0;
+      
+      &:first-child,
+      &:nth-child(2),
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+}

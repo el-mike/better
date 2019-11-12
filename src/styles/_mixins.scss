@@ -11,3 +11,10 @@
   justify-content: $justify-content;
   align-items: $align-items;
 }
+
+
+@mixin for-size($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+}
