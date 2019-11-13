@@ -6,18 +6,12 @@ import {
   ofType,
 } from '@ngrx/effects';
 
-import {
-  Update,
-} from '@ngrx/entity';
-
-
 import { EMPTY } from 'rxjs';
 
 import {
   map,
   mergeMap,
   switchMap,
-  tap,
   catchError,
 } from 'rxjs/operators';
 

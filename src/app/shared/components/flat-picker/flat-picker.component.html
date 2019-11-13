@@ -1,9 +1,9 @@
 <div class="flat-picker btn-group">
-    <button *ngFor="let item of items"
-            [ngClass]="{ 'active': item.value === selected }"
-            (click)="onSelectItem(item)"
-            class="btn btn--secondary-outline btn--small">
-      {{ item.label | translate }}
-    </button>
-  </div>
+  <button *ngFor="let item of items; trackBy: trackByFn"
+          [ngClass]="{ 'active': item.value === selected }"
+          (click)="onSelectItem(item)"
+          class="btn btn--secondary-outline btn--small flat-picker__item">
+    {{ item.label | translate }}
+  </button>
+</div>
   

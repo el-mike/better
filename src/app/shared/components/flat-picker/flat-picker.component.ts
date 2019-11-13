@@ -29,4 +29,8 @@ export class FlatPickerComponent {
   public onSelectItem(item: FlatPickerItem) {
     this.selectItem.emit(item.value);
   }
+
+  public trackBtFn(item: FlatPickerItem) {
+    return item.value;
+  }
 }

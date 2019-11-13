@@ -1,3 +1,5 @@
+export * from './type.model';
+
 export * from './environment.model';
 
 export * from './theme-config.model';

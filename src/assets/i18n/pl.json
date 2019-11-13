@@ -2,5 +2,10 @@
   "general.theme_light_l": "Jasny",
   "general.theme_dark_l": "Ciemny",
   "general.en_l": "en",
-  "general.pl_l": "pl"
+  "general.pl_l": "pl",
+  "bets.bets_title": "Zakłady",
+  "bets.generate_bets_a": "Generuj",
+  "bets.draw": "Remis",
+  "bets.start_pulling_a": "Start",
+  "bets.stop_pulling_a": "Stop"
 }

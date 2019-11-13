@@ -4,13 +4,13 @@
       {{ 'bets.bets_title' | translate }}
     </h2>
     <div class="bets__header-actions">
-      <button class="btn btn--primary bets__generate-bets-btn" (click)="generateBets()">
+      <button class="btn btn--primary bets__generate-bets-btn" id="generate-bets-btn" (click)="generateBets()">
         {{ 'bets.generate_bets_a' | translate }}
       </button>
-      <button class="btn btn--primary bets__start-pulling-btn" (click)="startPulling()">
+      <button class="btn btn--primary bets__start-pulling-btn" id="start-pulling-btn" (click)="startPulling()">
         {{ 'bets.start_pulling_a' | translate }}
       </button>
-      <button class="btn btn--primary bets__stop-pulling-btn" (click)="stopPulling()">
+      <button class="btn btn--primary bets__stop-pulling-btn" id="stop-pulling-btn" (click)="stopPulling()">
         {{ 'bets.stop_pulling_a' | translate }}
       </button>
     </div>

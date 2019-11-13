@@ -1,12 +1,21 @@
-import { TestBed } from '@angular/core/testing';
-
 import { ApiService } from './api.service';
 
 describe('ApiService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  const testApiUrl = 'testUrl';
 
-  test('should be created', () => {
-    const service: ApiService = TestBed.get(ApiService);
-    expect(service).toBeTruthy();
+  class ChildServiceStub extends ApiService {
+    constructor() {
+      super(testApiUrl);
+    }
+
+    public getUrl() {
+      return this.apiUrl;
+    }
+  }
+
+  test('stores protected apiUrl variable', () => {
+    const service = new ChildServiceStub();
+
+    expect(service.getUrl()).toEqual(testApiUrl);
   });
 });

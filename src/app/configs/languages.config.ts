@@ -5,7 +5,7 @@ import {
 } from '@app/common';
 
 export const languagesConfig: LanguagesConfig = {
-  [Language.EN]:   {
+  [Language.EN]: {
     name: Language.EN,
     label: 'general.en_l',
     currency: Currency.USD,
