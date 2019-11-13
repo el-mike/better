@@ -3,6 +3,6 @@ import {
 } from '../common';
 
 export const betsConfig: BetsConfig = {
-  pullingRate: 2,
+  pullingRate: 4,
   generateSize: 50,
 };

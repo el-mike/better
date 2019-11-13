@@ -30,7 +30,7 @@ export class FlatPickerComponent {
     this.selectItem.emit(item.value);
   }
 
-  public trackBtFn(item: FlatPickerItem) {
+  public trackByFn(item: FlatPickerItem) {
     return item.value;
   }
 }
